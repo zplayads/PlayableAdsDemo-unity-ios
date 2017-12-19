@@ -1,13 +1,13 @@
 ### PlayableAdsSDK for Unity
   1. 概述
-  1. 模拟待接入广告的游戏
+  1. 模拟待接入广告的游戏
   2. 导入PlayableAds.unitypackage
   1. 开发环境配置
   1. 接入PlayableAds SDK
-  1. 代码集成示例
+  1. 代码集成示例
 
 ## 概述
-    1. 面向人人群，本产品主要面向需要在Unity产品中接入可玩广告SDK
+    1. 面向人人群，本产品主要面向需要在Unity产品中接入可玩广告SDK
     2. 开发环境配置
         Xcode 7.0或更高版本
         iOS 8.0或更高版本
@@ -17,7 +17,7 @@
         xcode: Version 9.1 (9B55)
         cocoapods: 1.2.1
 
-## 模拟待接入广告的游戏
+## 模拟待接入广告的游戏
 ### 1. 主体界面如下及基本配制
 ![image](/images/image01.png)
 ### 2. Main Camera的控件文件如下：
@@ -60,10 +60,10 @@ pod install --repo-update
 ### 5. 以下是手机截图，完整流程是点击“Request”开始请求广告，广告加载完成后提示“PlayableAdsDidLoad”，此时点击“Present”展示广告，广告展示完成后，点击“X”关闭广告，此时接收到“PlayableAdsDidRewardUser”消息。
 ![image](/images/image18.jpg)
 
-## 代码集成示例
+## 代码集成示例
 
 ### 初始化与加载广告
-将iOSDemoApp与iOSDemoAdUnit替换成你在ZPLAY官网申请的应用ID和广告位ID，否则会影响收益。
+将iOSDemoApp与iOSDemoAdUnit替换成你在ZPLAY官网申请的应用ID和广告位ID，否则会影响收益。
 ```
 PlayableAdsBridge.LoadAd(gameObject.name, "iOSDemoApp", "iOSDemoAdUnit");
 ```
@@ -88,7 +88,7 @@ public void PlayableAdsDidRewardUser(string msg)
 	cbInfo.text = "PlayableAdsDidRewardUser";
 }
 
-// 广告已经加载完毕，可以展示广告了
+// 广告已经加载完毕，可以展示广告了
 public void PlayableAdsDidLoad(string msg)
 {
 	cbInfo.text = "PlayableAdsDidLoad";
