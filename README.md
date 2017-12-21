@@ -15,8 +15,8 @@
         xcode: Version 9.1 (9B55)
         cocoapods: 1.2.1
 
-## Demo简介
-下载Demo源码后导入到Unity中，打开场景SampleGame.unity
+## Demo简介
+下载Demo源码后导入到Unity中，打开场景SampleGame.unity
 ### 1. 主体界面及基本配制，如下所示
 ![image](/images/image01.png)
 ### 2. Main Camera的控件文件如下：
@@ -42,7 +42,7 @@
 ![image](/images/image07.png)
 
 初始化与加载广告
-将iOSDemoApp与iOSDemoAdUnit替换成你在ZPLAY官网申请的应用ID和广告位ID，否则会影响收益。
+将iOSDemoApp与iOSDemoAdUnit替换成你在ZPLAY官网申请的应用ID和广告位ID，否则会影响收益。
 ```c#
 PlayableAdsBridge.LoadAd(gameObject.name, "iOSDemoApp", "iOSDemoAdUnit");
 ```
@@ -98,7 +98,7 @@ public void PlayableAdFeedBack(string msg)
 pod install --repo-update
 ```
 ![image](/images/image16.png)
-看到红线圈出的部分代表可玩广告SDK安装成功，此时可以运行项目查看运行效果了，步骤如下
+看到红线圈出的部分代表可玩广告SDK安装成功，此时可以运行项目查看运行效果了，步骤如下
 ### 4. 验证SDK是否安装成功
 双击打开.xcworkspace文件，在xcode中安装应用到iPhone
 ![image](/images/image17.png)
