@@ -34,3 +34,5 @@ sysinfo.txt
 *.apk
 *.unitypackage
 !PlayableAds.unitypackage
+!PlayableAds-iOS.unitypackage
+!PlayableAds-Android.unitypackage
