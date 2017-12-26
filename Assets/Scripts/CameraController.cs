@@ -4,14 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using PlayableAds.API;
 
-public class CameraController : MonoBehaviour, IPlayableListener, IPlayableAdapterListener
+public class CameraController : MonoBehaviour, IPlayableAdapterListener
 {
 	public Text cbInfo;
 	public Button requestBtn;
 	public Button presentBtn;
 
-	private readonly string iosTestAppId = "iOSDemoApp";
-	private readonly string iosTestAdUnitId = "iOSDemoAdUnit";
 	private readonly string androidTestAppId = "5C5419C7-A2DE-88BC-A311-C3E7A646F6AF";
 	private readonly string androidTestAdUnitId = "BAE5DAAC-04A2-2591-D5B0-38FA846E45E7";
 
@@ -26,9 +24,6 @@ public class CameraController : MonoBehaviour, IPlayableListener, IPlayableAdapt
 	private void RequestAd()
 	{
 		cbInfo.text = "request ad";
-		#if UNITY_IOS
-		PlayableAdsBridge.LoadAd(gameObject.name, iosTestAppId, iosTestAdUnitId);
-		#endif
 
 		PlayableAdsAdapter.RequestAd(androidTestAdUnitId);
 	}
@@ -36,13 +31,6 @@ public class CameraController : MonoBehaviour, IPlayableListener, IPlayableAdapt
 	private void PresentAd()
 	{
 		cbInfo.text = "present ad";
-		#if UNITY_IOS
-		if(PlayableAdsBridge.IsReady()) {
-			PlayableAdsBridge.PresentAd();
-		} else {
-			cbInfo.text = "ad not ready.";
-		}
-		#endif
 
 		if(PlayableAdsAdapter.CanPresentAd(androidTestAdUnitId)) {
 			PlayableAdsAdapter.PresentAd(androidTestAdUnitId);
@@ -51,36 +39,7 @@ public class CameraController : MonoBehaviour, IPlayableListener, IPlayableAdapt
 		}
 	}
 
-	#region ios-PlayableAds listener
-
-	// Reward
-	public void PlayableAdsDidRewardUser(string msg)
-	{
-		cbInfo.text = "PlayableAdsDidRewardUser";
-	}
-
-	// ad has been loaded.
-	public void PlayableAdsDidLoad(string msg)
-	{
-		cbInfo.text = "PlayableAdsDidLoad";
-	}
-
-	// ad load failed
-	public void DidFailToLoadWithError(string error)
-	{
-		cbInfo.text = error;
-	}
-
-	// playable other feedback
-	public void PlayableAdFeedBack(string msg)
-	{
-		Debug.Log("PlayableAdFeedBack: " + msg);
-	}
-
-	#endregion
-
 	#region android-PlayableAds listener
-
 	public void OnLoadFinished(string msg)
 	{
 		cbInfo.text = "load finished";
