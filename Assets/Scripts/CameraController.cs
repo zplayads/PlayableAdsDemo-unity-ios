@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using PlayableAds.API;
 
@@ -9,6 +7,9 @@ public class CameraController : MonoBehaviour, IPlayableListener
 	public Text cbInfo;
 	public Button requestBtn;
 	public Button presentBtn;
+
+	private readonly string iOSTestAppId = "iOSDemoApp";
+	private readonly string iOSTestAdUnitId = "iOSDemoAdUnit";
 
 	void Start()
 	{
@@ -21,7 +22,7 @@ public class CameraController : MonoBehaviour, IPlayableListener
 	{
 		cbInfo.text = "request ad";
 		#if UNITY_IOS
-		PlayableAdsBridge.LoadAd(gameObject.name, "iOSDemoApp", "iOSDemoAdUnit");
+		PlayableAdsBridge.LoadAd(gameObject.name, iOSTestAppId, iOSTestAdUnitId);
 		#endif
 	}
 
