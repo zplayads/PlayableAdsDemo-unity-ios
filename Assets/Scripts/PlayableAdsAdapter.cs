@@ -1,8 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace PlayableAds.API {
+	/**
+	 * PlayableAds Android Plugin Adapter 
+	 */
 	public class PlayableAdsAdapter
 	{
 		private static string objectName;
@@ -48,6 +49,7 @@ namespace PlayableAds.API {
 	}
 
 	public interface IPlayableAdapterListener {
+		
 		void OnLoadFinished(string msg);
 
 		void OnLoadFailed(string msg);

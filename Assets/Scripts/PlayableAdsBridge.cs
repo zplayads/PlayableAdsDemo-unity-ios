@@ -1,8 +1,10 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 using System.Runtime.InteropServices;
 
 namespace PlayableAds.API {
+	/**
+	 * PlayableAds iOS Plugin Bridge
+	 */
 	public class PlayableAdsBridge
 	{
 		[DllImport("__Internal")]
