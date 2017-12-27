@@ -11,8 +11,8 @@ public class CameraController : MonoBehaviour, IPlayableListener, IPlayableAdapt
 
 	private readonly string iosTestAppId = "iOSDemoApp";
 	private readonly string iosTestAdUnitId = "iOSDemoAdUnit";
-	private readonly string androidTestAppId = "5C5419C7-A2DE-88BC-A311-C3E7A646F6AF";
-	private readonly string androidTestAdUnitId = "BAE5DAAC-04A2-2591-D5B0-38FA846E45E7";
+	private readonly string androidTestAppId = "androidDemoApp";
+	private readonly string androidTestAdUnitId = "androidDemoAdUnit";
 
 	void Start()
 	{
