@@ -43,7 +43,7 @@ public class CameraController : MonoBehaviour, IPlayableListener, IPlayableAdapt
 		}
 		#endif
 
-		if(PlayableAdsAdapter.CanPresentAd(androidTestAdUnitId)) {
+		if(PlayableAdsAdapter.IsReady(androidTestAdUnitId)) {
 			PlayableAdsAdapter.PresentAd(androidTestAdUnitId);
 		} else {
 			cbInfo.text = "ad not ready.";

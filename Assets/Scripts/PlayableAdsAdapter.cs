@@ -40,7 +40,7 @@ namespace PlayableAds.API {
 			}
 		}
 
-		public static bool CanPresentAd(string adUnitId)
+		public static bool IsReady(string adUnitId)
 		{
 			using(AndroidJavaClass sec = new AndroidJavaClass("com.zplay.playable.playableadsplugin.PlayableAdsAdapter")) {
 				return sec.CallStatic<bool>("canPresentAd", adUnitId);
